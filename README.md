@@ -1,5 +1,17 @@
 # simple-audio-player
 
+# Installation
+
+Just add file to your project
+
+# Usage
+
+-
+
+# Basics
+
+-
+
 ## License
 
 The MIT License (MIT)
