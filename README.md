@@ -1,14 +1,14 @@
 # Simpple Audio Player
 
-# Installation
+## Installation
 
 Just add file to your project
 
-# Usage
+## Usage
 
 -
 
-# Basics
+## Basics
 
 -
 
