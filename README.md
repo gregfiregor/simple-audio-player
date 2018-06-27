@@ -2,7 +2,7 @@
 
 ## Installation
 
-Just add file to your project
+Just add files to your project
 
 ## Usage
 
