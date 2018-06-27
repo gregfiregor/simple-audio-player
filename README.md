@@ -1,4 +1,4 @@
-# Simpple Audio Player
+# Simple Audio Player
 
 ## Installation
 
