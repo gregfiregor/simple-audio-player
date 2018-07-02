@@ -9,6 +9,7 @@
             list_items: [],
             activeTrack: null,
             last_down_and_move_index: null,
+            bar: null,
             bar_prev_button: null,
             bar_play_button: null,
             bar_next_button: null,
@@ -25,8 +26,8 @@
 
             var that = this;
 
-            if ($(this.element).find('li').length > 0) {
-                this.trackElements = this.element.children().toArray();
+            if ($(".sap-player").length >0 > 0) {
+                this.trackElements = $(".sap-player li",$(this.element)).toArray();
                 this.trackElements.forEach(function (item, i) {
 
                     var track_name = $(item).data('track-name');
@@ -153,6 +154,7 @@
 
             var player_bar = document.createElement("div");
             player_bar.setAttribute("class", "ui-player-bar");
+            this.options.bar = player_bar;
 
             var bar_prev_button = document.createElement("div");
             bar_prev_button.setAttribute("class", "ui-player-bar--prev");
@@ -202,7 +204,7 @@
 
 
             document.body.appendChild(player_bar);
-            console.log("11");
+
 
         },
         _addEvents: function () {
@@ -222,7 +224,6 @@
                             $(item_i.play_button).addClass("on_pause");
                             $(item_i.list_item).removeClass("active");
                         } else {
-                            console.log("play")
                             that.options.activeTrack = track;
                             $(item_i.play_button).removeClass("on_pause");
                             $(that.options.bar_play_button).removeClass("on_pause");
@@ -236,6 +237,8 @@
                         }
                     });
                     that.setVolume(that.options.volume);
+
+                    that.showOrHideBar(true);
 
                 }, false);
 
@@ -262,6 +265,7 @@
                                 } else {
                                     $(item["play_button"]).addClass("on_pause");
                                     $(that.options.bar_play_button).addClass("on_pause")
+                                    that.showOrHideBar(false);
                                 }
                             }
                         });
@@ -522,7 +526,15 @@
                 this.setVolume(value);
             }
 
+        },
+        showOrHideBar: function (flag){
+            if (flag){
+                $(this.options.bar).addClass("show")
+            }  else {
+                $(this.options.bar).removeClass("show")
+            }
         }
+
     });
 
 

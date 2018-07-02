@@ -19,8 +19,14 @@ ul {
   ul li {
     display: block; }
 
-#ui-audio-list {
-  display: none; }
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem; }
+
+.main-wrapper {
+  padding-bottom: 150px; }
 
 .ui-audio-list {
   margin: 0 auto;
@@ -65,21 +71,37 @@ ul {
         display: none; }
     .ui-audio-list__item--labels {
       float: left;
-      min-width: 300px; }
+      width: 400px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
       .ui-audio-list__item--labels .name {
         line-height: 32px;
-        display: inline-block; }
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #3a3a3a;
+        font-weight: 600; }
       .ui-audio-list__item--labels .divider {
         line-height: 32px;
         display: inline-block;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
         font-size: 1.6rem;
-        color: #000; }
+        color: #000;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
       .ui-audio-list__item--labels .artists {
         line-height: 32px;
         display: inline-block;
-        margin-right: 15px; }
+        margin-right: 15px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #676767; }
     .ui-audio-list__item--controls {
       float: left; }
       .ui-audio-list__item--controls .prev {
@@ -97,9 +119,10 @@ ul {
       position: absolute;
       background-color: #c1c1c1;
       height: 2px;
-      width: 320px;
+      width: 400px;
       bottom: 20px;
-      left: 62px; }
+      left: 62px;
+      cursor: pointer; }
       .ui-audio-list__item--progress:before {
         content: "";
         display: block;
@@ -127,11 +150,17 @@ ul {
 .ui-player-bar {
   position: fixed;
   width: 100%;
-  padding: 15px;
-  bottom: 0;
+  transition: 0.2s linear;
   background-color: #eee;
-  border-top: 1px solid #eee; }
+  border-top: 1px solid #eee;
+  height: 50px;
+  bottom: -63px; }
+  .ui-player-bar.show {
+    bottom: 0; }
   .ui-player-bar--prev {
+    position: absolute;
+    top: 10px;
+    left: 15px;
     width: 32px;
     height: 32px;
     background-image: url("../images/controls.png");
@@ -141,9 +170,11 @@ ul {
     background-color: #000;
     border-radius: 50%;
     cursor: pointer;
-    float: left;
     margin-right: 15px; }
   .ui-player-bar--play {
+    position: absolute;
+    top: 10px;
+    left: 62px;
     width: 32px;
     height: 32px;
     background-image: url("../images/controls.png");
@@ -153,11 +184,13 @@ ul {
     background-color: #000;
     border-radius: 50%;
     cursor: pointer;
-    float: left;
     margin-right: 15px; }
     .ui-player-bar--play.on_pause {
       background-position: left -32px center; }
   .ui-player-bar--next {
+    position: absolute;
+    top: 10px;
+    left: 110px;
     width: 32px;
     height: 32px;
     background-image: url("../images/controls.png");
@@ -167,12 +200,18 @@ ul {
     background-color: #000;
     border-radius: 50%;
     cursor: pointer;
-    float: left;
     margin-right: 15px; }
   .ui-player-bar--label {
-    float: left;
+    position: absolute;
+    top: 9px;
+    left: 160px;
     line-height: 32px;
-    font-size: 16px; }
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    font-weight: bold; }
   .ui-player-bar--progress {
     position: absolute;
     width: 100%;
@@ -188,6 +227,9 @@ ul {
     width: 0;
     background-color: #000; }
   .ui-player-bar--volume_button {
+    position: absolute;
+    top: 10px;
+    right: 95px;
     width: 32px;
     height: 32px;
     background-image: url("../images/controls.png");
@@ -196,15 +238,13 @@ ul {
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;
-    float: right;
     margin-right: 15px; }
     .ui-player-bar--volume_button.muted {
       background-position: left -160px center; }
   .ui-player-bar--volume {
-    position: relative;
-    float: right;
-    right: 0;
-    top: 15px;
+    position: absolute;
+    top: 24px;
+    right: 15px;
     width: 80px;
     height: 2px;
     background-color: #c1c1c1;
@@ -235,5 +275,45 @@ ul {
         width: 14px;
         height: 14px;
         cursor: pointer; }
+
+@media (max-width: 1024px) {
+  .ui-player-bar--label {
+    max-width: 50%; } }
+@media (max-width: 768px) {
+  .ui-player-bar--prev {
+    display: none; }
+  .ui-player-bar--play {
+    left: 15px; }
+  .ui-player-bar--next {
+    left: 64px; }
+  .ui-player-bar--label {
+    left: 115px; }
+
+  .ui-audio-list__item--labels {
+    width: calc(100% - 90px); }
+  .ui-audio-list__item--progress {
+    width: calc(100% - 120px); }
+  .ui-audio-list__item--time {
+    display: none; }
+  .ui-audio-list__item--left_time {
+    float: right;
+    margin-right: 0; }
+  .ui-audio-list__item--controls {
+    display: none; } }
+@media (max-width: 500px) {
+  .ui-player-bar--play {
+    right: 46px;
+    left: auto; }
+  .ui-player-bar--next {
+    right: 15px;
+    left: auto;
+    margin: 0; }
+  .ui-player-bar--label {
+    left: 15px;
+    max-width: calc(100% - 125px); }
+  .ui-player-bar--volume {
+    display: none; }
+  .ui-player-bar--volume_button {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

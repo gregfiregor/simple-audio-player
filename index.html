@@ -3,31 +3,65 @@
 <meta charset="UTF-8">
 <title>Simple Ajax Player</title>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./sass/style.css">
     <script src="jquery.3.3.1.js"></script>
     <script src="jquery-ui.js"></script>
     <script src="player-new.js"></script>
     <script src="common.js"></script>
 </head>
 <body>
-<h1 class="text-center">Simple Player</h1>
+<section class="main-wrapper">
+    <h1 class="text-center">Simple Player</h1>
+    <h2>List #1</h2>
 
-<ul id="audio-list"  class="ui-audio-list">
-<li class="ui-audio-list__item" data-track-name="Aria Ivanova Ivana" data-artist="Ivanov Ivan" data-audio-src="./audio/audio.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-<li class="ui-audio-list__item" data-track-name="Aria Ivanova Ivana" data-artist="Ivanov Ivan" data-audio-src="./audio/audio-1.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-<li class="ui-audio-list__item" data-track-name="2 Aria Ivanova Ivana 2" data-artist="2 Ivanov Ivan 2" data-audio-src="./audio/audio-2.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="Aria Ivanova Ivana" data-artist="Ivanov Ivan" data-audio-src="./audio/audio-3.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="Aria Ivanova Ivana" data-artist="Ivanov Ivan" data-audio-src="./audio/audio-4.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="2 Aria Ivanova Ivana 2" data-artist="2 Ivanov Ivan 2" data-audio-src="./audio/audio-5.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="Aria Ivanova Ivana" data-artist="Ivanov Ivan" data-audio-src="./audio/audio-6.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="Aria Ivanova Ivana" data-artist="Ivanov Ivan" data-audio-src="./audio/audio-7.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="2 Aria Ivanova Ivana 2" data-artist="2 Ivanov Ivan 2" data-audio-src="./audio/audio-8.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="2 Aria Ivanova Ivana 2" data-artist="2 Ivanov Ivan 2" data-audio-src="./audio/audio-9.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-    <li class="ui-audio-list__item" data-track-name="2 Aria Ivanova Ivana 2" data-artist="2 Ivanov Ivan 2" data-audio-src="./audio/audio-10.mp3" data-image-src="./images/man-face.jpg" data-track-long="4:03"></li>
-</ul>
+    <ul class="sap-player ui-audio-list">
+        <li class="ui-audio-list__item" data-track-name="Bensound-anewbeginning Bensound-pianomoment - Composer: Benjamin TISSOT (also known as Bensound Bensound-pianomoment - Composer: Benjamin TISSOT (also known as Bensound"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-anewbeginning.mp3" data-track-long="2:35"></li>
+    </ul>
+    <hr>
+    <h2>List #2</h2>
+    <ul class="sap-player ui-audio-list">
+        <li class="ui-audio-list__item" data-track-name="Bensound-clapandyell"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-clapandyell.mp3" data-track-long="2:56"></li>
+        <li class="ui-audio-list__item" data-track-name="Bensound-cute"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-cute.mp3" data-track-long="3:14"></li>
+    </ul>
+    <hr>
+    <h2>List #3</h2>
+    <ul class="sap-player ui-audio-list">
+        <li class="ui-audio-list__item" data-track-name="Bensound-groovyhiphop"
+            data-artist="Composer: Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-groovyhiphop.mp3" data-track-long="4:01"></li>
+        <li class="ui-audio-list__item" data-track-name="Bensound-happyrock"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-happyrock.mp3" data-track-long="1:46"></li>
+        <li class="ui-audio-list__item" data-track-name="Bensound-hey"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-hey.mp3" data-track-long="2:52"></li>
+    </ul>
+    <hr>
+    <h2>List #4</h2>
+    <ul class="sap-player ui-audio-list">
+        <li class="ui-audio-list__item" data-track-name="Bensound-pianomoment"
+            data-artist="Composer: Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-pianomoment.mp3" data-track-long="1:50"></li>
 
+        <li class="ui-audio-list__item" data-track-name="Bensound-summer"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-summer.mp3" data-track-long="3:37"></li>
 
+        <li class="ui-audio-list__item" data-track-name="Bensound-sweet"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-sweet.mp3" data-track-long="5:08"></li>
+        <li class="ui-audio-list__item" data-track-name="Bensound-thelounge"
+            data-artist="Benjamin TISSOT (also known as Bensound)"
+            data-audio-src="./audio/bensound-thelounge.mp3" data-track-long="4:16"></li>
+    </ul>
+</section>
 </body>
 </html>
